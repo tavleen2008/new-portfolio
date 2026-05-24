@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 import { 
   Terminal, 
   Code2, 
@@ -45,6 +46,78 @@ export default function App() {
       featured: true
     }
   ];
+
+  // Scroll animation refs
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  // Scroll animation controls
+  const aboutInView = useInView(aboutRef, { once: false, amount: 0.3 });
+  const skillsInView = useInView(skillsRef, { once: false, amount: 0.3 });
+  const projectsInView = useInView(projectsRef, { once: false, amount: 0.3 });
+  const contactInView = useInView(contactRef, { once: false, amount: 0.3 });
+
+  const aboutControls = useAnimation();
+  const skillsControls = useAnimation();
+  const projectsControls = useAnimation();
+  const contactControls = useAnimation();
+
+  useEffect(() => {
+    if (aboutInView) {
+      aboutControls.start("visible");
+    } else {
+      aboutControls.start("hidden");
+    }
+  }, [aboutInView, aboutControls]);
+
+  useEffect(() => {
+    if (skillsInView) {
+      skillsControls.start("visible");
+    } else {
+      skillsControls.start("hidden");
+    }
+  }, [skillsInView, skillsControls]);
+
+  useEffect(() => {
+    if (projectsInView) {
+      projectsControls.start("visible");
+    } else {
+      projectsControls.start("hidden");
+    }
+  }, [projectsInView, projectsControls]);
+
+  useEffect(() => {
+    if (contactInView) {
+      contactControls.start("visible");
+    } else {
+      contactControls.start("hidden");
+    }
+  }, [contactInView, contactControls]);
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-purple-500/30 selection:text-purple-200">
@@ -145,7 +218,14 @@ export default function App() {
       <main className="flex-1 max-w-7xl mx-auto px-6 w-full relative z-10 py-12 md:py-20 flex flex-col gap-24 md:gap-36">
 
         {/* About Section */}
-        <section id="about" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <motion.section 
+          ref={aboutRef}
+          id="about" 
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+          initial="hidden"
+          animate={aboutControls}
+          variants={containerVariants}
+        >
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/5 text-purple-400 text-xs font-semibold tracking-wider uppercase w-fit">
               <Sparkles className="w-3.5 h-3.5" />
@@ -220,10 +300,17 @@ Balancing DSA , college academics and building stuff that actually works.
               <div className="absolute right-0 bottom-0 w-24 h-24 bg-gradient-to-tr from-purple-500/10 to-transparent rounded-full blur-2xl" />
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Skills Section */}
-        <section id="skills" className="flex flex-col gap-12">
+        <motion.section 
+          ref={skillsRef}
+          id="skills" 
+          className="flex flex-col gap-12"
+          initial="hidden"
+          animate={skillsControls}
+          variants={containerVariants}
+        >
           <div className="text-center max-w-2xl mx-auto flex flex-col gap-4">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
               My Engineering Toolkit
@@ -237,8 +324,9 @@ Balancing DSA , college academics and building stuff that actually works.
             {skills.map((skill, index) => {
               const IconComponent = skill.icon;
               return (
-                <div 
-                  key={index} 
+                <motion.div 
+                  key={index}
+                  variants={itemVariants}
                   className="p-6 rounded-2xl bg-slate-900/40 border border-slate-900 hover:border-slate-800/80 hover:bg-slate-900/70 transition-all duration-300 group flex items-start gap-4 shadow-lg"
                 >
                   <div className={`p-3 rounded-xl border ${skill.color} transition-all duration-300 group-hover:scale-105`}>
@@ -252,14 +340,21 @@ Balancing DSA , college academics and building stuff that actually works.
                       {skill.category}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
-        </section>
+        </motion.section>
 
         {/* Projects Section */}
-        <section id="projects" className="flex flex-col gap-12">
+        <motion.section 
+          ref={projectsRef}
+          id="projects" 
+          className="flex flex-col gap-12"
+          initial="hidden"
+          animate={projectsControls}
+          variants={containerVariants}
+        >
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="flex flex-col gap-4 max-w-2xl">
               <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
@@ -283,8 +378,9 @@ Balancing DSA , college academics and building stuff that actually works.
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div 
-                key={index} 
+              <motion.div 
+                key={index}
+                variants={itemVariants}
                 className={`flex flex-col justify-between p-7 rounded-2xl bg-slate-900/30 border border-slate-900 hover:border-slate-800/80 hover:bg-slate-900/50 transition-all duration-300 group shadow-xl relative overflow-hidden ${project.featured ? 'md:col-span-2 lg:col-span-1 border-purple-500/20 bg-gradient-to-b from-slate-900/40 to-slate-950' : ''}`}
               >
                 <div>
@@ -333,19 +429,30 @@ Balancing DSA , college academics and building stuff that actually works.
                 {project.featured && (
                   <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-purple-500/5 rounded-full blur-xl pointer-events-none" />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Contact Section */}
-        <section id="contact" className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-b from-slate-900/60 to-slate-950 border border-slate-900 overflow-hidden shadow-2xl flex flex-col items-center text-center gap-6 max-w-4xl mx-auto">
+        <motion.section 
+          ref={contactRef}
+          id="contact" 
+          className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-b from-slate-900/60 to-slate-950 border border-slate-900 overflow-hidden shadow-2xl flex flex-col items-center text-center gap-6 max-w-4xl mx-auto"
+          initial="hidden"
+          animate={contactControls}
+          variants={containerVariants}
+        >
           {/* Subtle background glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
           
-          <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-2 shadow-lg">
+          <a 
+            href="mailto:tavleenk4280@gmail.com"
+            rel="noopener noreferrer"
+            className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-2 shadow-lg hover:bg-purple-500/20 hover:border-purple-500/40 transition-all duration-300 cursor-pointer relative z-10"
+          >
             <Mail className="w-5 h-5 animate-pulse" />
-          </div>
+          </a>
 
           <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
             Let's Collaborate On Something Great
@@ -356,7 +463,8 @@ Balancing DSA , college academics and building stuff that actually works.
           </p>
 
           <a 
-            href="mailto:tavleen.codes@example.com" 
+            href="mailto:tavleenk4280@gmail.com"
+            rel="noopener noreferrer"
             className="mt-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-semibold uppercase tracking-wider hover:opacity-95 hover:shadow-lg hover:shadow-purple-500/15 transition-all duration-300 flex items-center gap-2"
           >
             Send An Email
@@ -398,7 +506,7 @@ Balancing DSA , college academics and building stuff that actually works.
               <Mail className="w-5 h-5" />
             </a>
           </div>
-        </section>
+        </motion.section>
 
       </main>
 
