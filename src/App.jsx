@@ -33,7 +33,7 @@ export default function App() {
       title: "Student Task Manager",
       description: "A react based to-do-list in which u can add or delete tasks",
       tags: ["React JS"],
-      link: "#",
+      link: "https://github.com/tavleen2008/react-student-manager",
       featured: false
     },
     
@@ -41,7 +41,7 @@ export default function App() {
       title: "DSA Codebook",
       description: "A real-time data structure visualizer inspired by a kitchen simulation game.",
       tags: ["React JS", "Vite", "Tailwind CSS"],
-      link: "#",
+      link: "https://github.com/tavleen2008/dsa-codebook",
       featured: true
     }
   ];
@@ -62,7 +62,7 @@ export default function App() {
               <Code2 className="w-5 h-5 text-white" />
             </div>
             <span className="font-extrabold text-lg tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-300 group-hover:opacity-90">
-              TAVLEEN.CODES
+              MyCodeJournal
             </span>
           </a>
 
