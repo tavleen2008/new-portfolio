@@ -8,7 +8,7 @@ export const BoxesCore = ({ className, ...rest }) => {
   
   // Using direct color values instead of CSS variables
   const colors = [
-    "rgb(125 211 252)", // sky-300
+    "rgb(103, 201, 246)", // sky-300
     "rgb(249 168 212)", // pink-300
     "rgb(134 239 172)", // green-300
     "rgb(253 224 71)",  // yellow-300
@@ -37,7 +37,7 @@ export const BoxesCore = ({ className, ...rest }) => {
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}
-          className="w-16 h-8 border-l border-slate-700/40 relative"
+          className="w-16 h-8 border-l border-slate-450/80 dark:border-slate-700/85 relative"
         >
           {cols.map((_, j) => (
             <motion.div
@@ -49,7 +49,7 @@ export const BoxesCore = ({ className, ...rest }) => {
                 transition: { duration: 2 },
               }}
               key={`col` + j}
-              className="w-16 h-8 border-r border-t border-slate-700/40 relative"
+              className="w-16 h-8 border-r border-t border-slate-450/80 dark:border-slate-700/85 relative"
             >
               {j % 2 === 0 && i % 2 === 0 ? (
                 <svg
@@ -58,7 +58,7 @@ export const BoxesCore = ({ className, ...rest }) => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="absolute h-6 w-10 -top-[14px] -left-[22px] text-slate-700/50 stroke-[1px] pointer-events-none"
+                  className="absolute h-6 w-10 -top-[14px] -left-[22px] text-slate-400/80 dark:text-slate-600/85 stroke-[1px] pointer-events-none"
                 >
                   <path
                     strokeLinecap="round"

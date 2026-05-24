@@ -39,10 +39,10 @@ export default function Skills() {
   return (
     <section id="skills" className="flex flex-col gap-12">
       <div className="text-center max-w-2xl mx-auto flex flex-col gap-4">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           My Engineering Toolkit
         </h2>
-        <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed">
           Curated stack that ensures absolute rendering performance, dynamic transitions, and modern responsiveness.
         </p>
       </div>

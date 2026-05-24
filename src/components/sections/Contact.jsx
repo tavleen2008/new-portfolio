@@ -25,7 +25,7 @@ export default function Contact() {
     <motion.section
       ref={contactRef}
       id="contact"
-      className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-b from-slate-900/60 to-slate-950 border border-slate-900 overflow-hidden shadow-2xl flex flex-col items-center text-center gap-6 max-w-4xl mx-auto"
+      className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-b from-white/80 to-slate-100/50 dark:from-slate-900/60 dark:to-slate-950 border border-slate-200 dark:border-slate-900 overflow-hidden shadow-2xl flex flex-col items-center text-center gap-6 max-w-4xl mx-auto w-full"
       initial="hidden"
       animate={contactControls}
       variants={containerVariants}
@@ -35,16 +35,16 @@ export default function Contact() {
       <a
         href="mailto:tavleenk4280@gmail.com"
         rel="noopener noreferrer"
-        className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-2 shadow-lg hover:bg-purple-500/20 hover:border-purple-500/40 transition-all duration-300 cursor-pointer relative z-10"
+        className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-2 shadow-lg hover:bg-purple-500/20 hover:border-purple-500/40 transition-all duration-300 cursor-pointer relative z-10"
       >
         <Mail className="w-5 h-5 animate-pulse" />
       </a>
 
-      <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+      <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
         Let's Collaborate On Something Great
       </h2>
 
-      <p className="text-slate-400 text-sm md:text-base max-w-xl leading-relaxed">
+      <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base max-w-xl leading-relaxed">
         I am always interested in discussing modern web engineering, elegant user designs, and high-fidelity integrations. Reach out, and let's craft something outstanding!
       </p>
 
@@ -63,7 +63,7 @@ export default function Contact() {
           href="https://github.com/tavleen2008"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 hover:bg-slate-800/80 transition-all duration-300 shadow-md"
+          className="p-3 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all duration-300 shadow-md"
           title="GitHub"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -75,7 +75,7 @@ export default function Contact() {
           href="https://www.linkedin.com/in/tavleen-kaur-9296b7313/"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 hover:bg-slate-800/80 transition-all duration-300 shadow-md"
+          className="p-3 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all duration-300 shadow-md"
           title="LinkedIn"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -86,7 +86,7 @@ export default function Contact() {
         </a>
         <a
           href="mailto:tavleenk4280@gmail.com"
-          className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 hover:bg-slate-800/80 transition-all duration-300 shadow-md"
+          className="p-3 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all duration-300 shadow-md"
           title="Email"
         >
           <Mail className="w-5 h-5" />
