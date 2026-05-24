@@ -78,7 +78,7 @@ export default function About() {
           <div className="font-mono text-xs md:text-sm leading-relaxed text-slate-400 select-none">
             <p><span className="text-pink-500">const</span> developer = &#123;</p>
             <p className="pl-4"><span className="text-slate-200">name</span>: <span className="text-emerald-400">"Tavleen Kaur"</span>,</p>
-            <p className="pl-4"><span className="text-slate-200">role</span>: <span className="text-emerald-400">"AI Frontend Engineer"</span>,</p>
+            <p className="pl-4"><span className="text-slate-200">role</span>: <span className="text-emerald-400">"Frontend Developer"</span>,</p>
             <p className="pl-4"><span className="text-slate-200">passion</span>: <span className="text-emerald-400">"Interactive Design"</span>,</p>
             <p className="pl-4"><span className="text-slate-200">skills</span>: [</p>
             <p className="pl-8 text-purple-400">"React JS", "Tailwind CSS",</p>

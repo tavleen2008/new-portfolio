@@ -55,15 +55,15 @@ export default function Projects() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="flex flex-col gap-4 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Featured Explorations
+            My Projects
           </h2>
           <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-            A selection of modern applications focused on design alignment and rich transitions.
+            My Engineering playground.
           </p>
         </div>
 
         <a
-          href="https://github.com"
+          href="https://github.com/tavleen2008"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-xs font-semibold text-purple-400 hover:text-purple-300 tracking-wider uppercase py-2 transition-colors w-fit border-b border-purple-500/0 hover:border-purple-400/50"

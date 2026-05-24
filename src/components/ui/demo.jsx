@@ -1,7 +1,26 @@
-import React from "react";
+import React from "react"
 import { Boxes } from "@/components/ui/background-boxes"
 import { cn } from "@/lib/utils"
+import {
+  IconBrandApple,
+  IconBrandDiscord,
+  IconBrandGithub,
+  IconBrandGoogleDrive,
+  IconBrandMessenger,
+  IconBrandNotion,
+  IconBrandOpenai,
+  IconBrandPaypal,
+  IconBrandReact,
+  IconBrandTailwind,
+  IconBrandTypescript,
+  IconBrandWhatsapp,
+  IconBrandX,
+} from "@tabler/icons-react"
+import { LogoTimeline } from "@/components/ui/logo-timeline"
 
+// ----------------------------------------------------
+// Background Boxes Demo (Used in Hero section)
+// ----------------------------------------------------
 export function BackgroundBoxesDemo() {
   return (
     <div className="h-[calc(100vh-64px)] w-full relative overflow-hidden bg-slate-950 flex flex-col items-center justify-center">
@@ -32,5 +51,127 @@ export function BackgroundBoxesDemo() {
         </div>
       </div>
     </div>
-  );
+  )
 }
+
+// ----------------------------------------------------
+// Logo Timeline Demo (Used in Skills section / standalone)
+// ----------------------------------------------------
+const logos = [
+  // Row 1 - Communication & Social (2 logos, 50s duration, spaced 25s apart)
+  {
+    label: "Discord",
+    icon: <IconBrandDiscord />,
+    animationDelay: -50,
+    animationDuration: 50,
+    row: 1,
+  },
+  {
+    label: "X (Twitter)",
+    icon: <IconBrandX />,
+    animationDelay: -25,
+    animationDuration: 50,
+    row: 1,
+  },
+  // Row 2 - Development Tools (2 logos, 45s duration, spaced 22.5s apart)
+  {
+    label: "GitHub",
+    icon: <IconBrandGithub />,
+    animationDelay: -45,
+    animationDuration: 45,
+    row: 2,
+  },
+  {
+    label: "React",
+    icon: <IconBrandReact />,
+    animationDelay: -22.5,
+    animationDuration: 45,
+    row: 2,
+  },
+  // Row 3 - Development Tools Continued (3 logos, 60s duration, spaced 20s apart)
+  {
+    label: "TypeScript",
+    icon: <IconBrandTypescript />,
+    animationDelay: -60,
+    animationDuration: 60,
+    row: 3,
+  },
+  {
+    label: "Tailwind",
+    icon: <IconBrandTailwind />,
+    animationDelay: -40,
+    animationDuration: 60,
+    row: 3,
+  },
+
+  // Row 4 - Productivity & Cloud (2 logos, 55s duration, spaced 27.5s apart)
+  {
+    label: "Google Drive",
+    icon: <IconBrandGoogleDrive />,
+    animationDelay: -55,
+    animationDuration: 55,
+    row: 4,
+  },
+  {
+    label: "Notion",
+    icon: <IconBrandNotion />,
+    animationDelay: -27.5,
+    animationDuration: 55,
+    row: 4,
+  },
+  // Row 5 - Messaging (2 logos, 50s duration, spaced 25s apart)
+  {
+    label: "WhatsApp",
+    icon: <IconBrandWhatsapp />,
+    animationDelay: -50,
+    animationDuration: 50,
+    row: 5,
+  },
+  {
+    label: "Messenger",
+    icon: <IconBrandMessenger />, // Placeholder icon
+    animationDelay: -25,
+    animationDuration: 50,
+    row: 5,
+  },
+  // Row 6 - AI & Automation (3 logos, 65s duration, spaced ~21.5s apart)
+  {
+    label: "OpenAI",
+    icon: <IconBrandOpenai />, // Placeholder icon
+    animationDelay: -65,
+    animationDuration: 65,
+    row: 6,
+  },
+
+  // Row 7 - Payment & Services (2 logos, 50s duration, spaced 25s apart)
+  {
+    label: "PayPal",
+    icon: <IconBrandPaypal />, // Placeholder icon
+    animationDelay: -50,
+    animationDuration: 50,
+    row: 7,
+  },
+  {
+    label: "Apple",
+    icon: <IconBrandApple />, // Placeholder icon
+    animationDelay: -25,
+    animationDuration: 50,
+    row: 7,
+  },
+]
+
+export function LogoTimelineDemo() {
+  return (
+    <div className="w-full overflow-hidden">
+      <LogoTimeline
+        items={logos}
+        title="Built with the best tools"
+        height="h-[400px] sm:h-[400px]"
+        iconSize={18}
+        showRowSeparator={true}
+      />
+    </div>
+  )
+}
+
+export default LogoTimelineDemo
